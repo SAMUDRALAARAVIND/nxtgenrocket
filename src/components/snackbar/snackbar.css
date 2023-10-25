@@ -1,0 +1,68 @@
+.snackbar{
+    padding: 20px 1rem;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50% , -50%);
+    max-width: max-content;
+    position: fixed;
+    display: grid;
+    top: 10%;
+    z-index: 7;
+    background-color: rgb(255, 0, 0);
+    align-items: center;
+    border-radius: 1rem;
+    grid-template-columns: 2.5rem 1fr 3rem ;
+    column-gap: 0.5rem;
+    width: 90%;
+    box-shadow: 3px 3px 3px rgb(49, 48, 48) ,  -3px -3px 3px rgb(38, 38, 38)  ;
+    /* animation: slide-down 0.4s ease-in-out forwards; */
+}
+
+  
+.hide-snackbar {
+    animation: slide-up 0.4s ease-in-out forwards;
+    display: none;
+  }
+  
+  @keyframes slide-down {
+    from {
+      transform: translateY(-2rem);
+    }
+    to {
+      transform: translateY(0%);
+    }
+  }
+  
+  @keyframes slide-up {
+    from {
+      transform: translateY(-0%);
+    }
+    to {
+      transform: translateY(2rem);
+    }
+  }
+
+
+  .error-symbol{
+    font-size: 2rem;
+    color: black;
+  }
+
+.snackbar a {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    height: 1.5rem;
+}
+
+.error-message{
+    font-size: 0.85rem;
+    columns: rgb(250, 178, 178);
+}
+
+.close-snackbar{
+cursor: pointer;
+font-size: 2rem;
+}

@@ -1,0 +1,28 @@
+.footer-container {
+    background-color: black;
+    padding-bottom: 80px;
+}
+.footer{
+    display: flex;  
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.footer-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+}
+.footer-card  > h3 {
+    color: #6CCEED;
+}
+.contact-number {
+    color: rgb(73, 73, 231);
+    font-size: 12px;
+}
+.address:nth-child(2){
+    color: #C38A49;
+}
