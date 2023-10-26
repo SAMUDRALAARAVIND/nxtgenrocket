@@ -20,9 +20,20 @@
     color: #6CCEED;
 }
 .contact-number {
-    color: rgb(73, 73, 231);
-    font-size: 12px;
+    color: #0078D7;
+    font-size: 14px;
 }
-.address:nth-child(2){
-    color: #C38A49;
+.address {
+    padding: 5px 0;
+}
+.address a {
+    color: #0078D7;
+    text-decoration: underline;
+}
+.address > p{
+    font-size: 14px;
+}
+.footer-card .flag {
+    width: 30px;
+    height: 30px;
 }

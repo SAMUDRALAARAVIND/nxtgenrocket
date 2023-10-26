@@ -9,8 +9,8 @@ const App = () => {
   
   return (
     <>
-        <Home/>
         <Nav/>
+        <Home/>
         <main>
           <Services/>
           <Contacts/>

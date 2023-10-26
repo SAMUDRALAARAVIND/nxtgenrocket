@@ -47,9 +47,23 @@ h2{
     font-size: 2.5rem;
 }
 
-@media screen and (max-width : 1200px) {
-    body{
-        margin: 1.5rem;
-        
-    }
+.fr {
+    display: flex;
+    flex-wrap: wrap row;
+}
+.fc{ 
+    display: flex;
+    flex-wrap: column wrap;
+}
+.jc-c{
+    justify-content: center;
+}
+.jc-sb{
+    justify-content: space-between;
+}
+.ai-c{
+    align-items: center;
+}
+.g-10{
+    gap: 10px;
 }
