@@ -8,6 +8,7 @@
     display :grid ;
     grid-template-columns: 50% 1fr;
     align-items: end;
+    gap: 20px;
 }
 .bottom-container{
     display: flex;
@@ -15,9 +16,7 @@
 }
 
 .dev-lottie {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    align-self: flex-end;
 }
 
 h1{

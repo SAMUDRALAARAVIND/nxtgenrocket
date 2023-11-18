@@ -8,14 +8,14 @@
     color: #6CCEEE;
 }
 #services > .description {
-    width: min(90vw, 600px);
+    width: min(90vw, 800px);
     text-align: center;
 }
 
 .services-container {
     display: flex;
     flex-flow: row wrap ;
-    gap: 20px;
+    gap: 30px;
     justify-content: center;
 }
 .services-container .service-card {
@@ -25,8 +25,16 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    box-shadow: -1px 1px 2px #ededed;
+    background-image: linear-gradient(to right,#303A57, #020824);
+    cursor: pointer;
+    transition: 0.5s;
+}
+.service-card:hover {
+    transform: scale(1.02);
 }
 .service-card h3 {
-    color: #F4CC83;
+    color: #FFFFFE;
+}
+.service-card p {
+    color: #91929D;
 }

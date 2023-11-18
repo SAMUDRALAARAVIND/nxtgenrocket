@@ -5,6 +5,7 @@ import dev from "../../images/dev.json"
 import CustomTypeWriter from './widgets/CustomTypeWriter'
 import OurStyle from './widgets/OurStyle'
 import ContactButton from './widgets/ContactButton'
+import hero from "../../images/hero.gif";
 
 import { GiTakeMyMoney } from "react-icons/gi"
 import { MdAutoGraph } from "react-icons/md"
@@ -40,7 +41,7 @@ const Home = () => {
         <h5>Expect Nothing less than Xtreme perfect</h5>
         <CustomTypeWriter />
         <div className='bottom-container'>
-          <h4 style={{margin: 0}}>We are <span>X</span>tremly <span>D</span>edicated to deliver </h4>
+          <h4 style={{ margin: 0 }}>We are <span>X</span>tremly <span>D</span>edicated to deliver </h4>
           <div className="handle-our-style">
             {
               ourStyle.map((e) => {
@@ -54,7 +55,7 @@ const Home = () => {
         </div>
       </section>
       <section className='dev-lottie'>
-        <Lottie animationData={dev} />
+        <img src={hero} alt="Highlighting GIF" width={"100%"} />
       </section>
     </header>
   )
