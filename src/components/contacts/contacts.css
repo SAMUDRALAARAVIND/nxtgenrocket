@@ -52,24 +52,6 @@ form {
     margin: 1.7rem auto;
     position: relative;
 }
-
-input,
-textarea {
-    border-radius: 10px;
-    width: 100%;
-    padding: 0.8rem 1.2rem;
-    font-size: 1rem;
-    line-height: 1.4;
-    font-weight: 500;
-    background-color: #303A57;
-    color: #fff;
-}
-
-textarea {
-    height: 15rem;
-    resize: none;
-}
-
 .error-style {
     margin: 0.5rem 1rem;
     font-size: 0.8rem;
@@ -89,13 +71,10 @@ form {
     color: black;
     display: flex;
     flex-direction: column;
-    gap: 20px;
 }
 
-form button {
+form .btn {
     border: 2px solid #6CCEEE;
-    padding: 10px 20px;
-    font-size: 24px;
     font-weight: 600;
     border-radius: 10px;
     cursor: pointer;

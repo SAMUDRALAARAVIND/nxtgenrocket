@@ -1,38 +1,59 @@
-import React from 'react'
-import SnackBar from '../../snackbar/SnackBar';
+import React, { useState } from 'react'
+import { Input, Form, Button, notification } from "antd";
+import axios from "axios";
+const { TextArea } = Input;
 
 const EmailUs = () => {
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        const form = e.target ;
-        const contactInfo = `
-            Hello There!
-            I am ${form["name"].value} intrestend in connecting with your team for the project to be done.Reach back to me at 
-            Email: ${form["email"].value}
-            Phone: ${form["phone"].value}
-        `;
-        
-        const emailLink = `mailto:samudralaaravind1708@gmail.com?subject=Need our project to be done&body=${contactInfo}`;
-        const emailWindow = window.open(emailLink, '_blank');
-
-        if (emailWindow) {
-            emailWindow.focus();
-        } else {
-            alert('Please allow pop-ups to send the email.');
-        }
+    const handleSubmit = (data: any) => {
+        setIsSubmitting(true);
+        (async function () {
+            try {
+                const response = await axios("https://contact-service-b9wn.onrender.com/contact/nxtgen/",
+                    {
+                        method: "POST",
+                        data
+                    }
+                );
+                if (response.status >= 200 && response.status < 300) {
+                    notification.success({
+                        message: "Thanks for contacting..",
+                        description: response.data.message
+                    });
+                }
+                else throw new Error(response.data?.message ?? "Something gone wrong")
+            }
+            catch (error) {
+                notification.error({
+                    message: "Oops Something went wrong",
+                    description: "Oops! we couldn't save your contact please contact the team from the numbers shown at the bottom of the page"
+                });
+            }
+            setIsSubmitting(false);
+        })();
     };
 
     return (
         <section className='contacts'>
-            <form onSubmit={handleSubmit} className="text-form" >
-                <input type="text" name='name' required min={3} placeholder='Enter your name' />
-                <input type="email" required name="email" placeholder='Enter your Email' />
-                <input type="number" name='phone' placeholder='Contact Number' required />
-                <textarea rows={5} name='message' placeholder='Message...' >
-                </textarea>
-                <button>Send Email</button>
-            </form>
+            <Form onFinish={handleSubmit} className="text-form" >
+                <Form.Item name='name'>
+                    <Input placeholder='Enter your Name' required min={3} />
+                </Form.Item>
+                <Form.Item name="email">
+                    <Input placeholder='Email' type='email' required />
+                </Form.Item>
+                <Form.Item name='contactNumber'>
+                    <Input placeholder='Contact Number' required />
+                </Form.Item>
+                <Form.Item name="message">
+                    <TextArea
+                        placeholder="Message... (optional)"
+                        autoSize={{ minRows: 4, maxRows: 6 }}
+                    />
+                </Form.Item>
+                <Button htmlType='submit' loading={isSubmitting} className='btn'>Get Quote</Button>
+            </Form>
         </section>
     )
 }
