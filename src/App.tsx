@@ -1,22 +1,29 @@
 import React from 'react'
-import Home from "./components/home/Home.tsx"
-import Services from "./components/services/Services.tsx"
-import Contacts from "./components/contacts/Contacts.tsx"
-import Nav from "./components/nav/Nav.tsx"
+import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom'
+import { HomeScreen } from './screens/home/index.tsx'
+import { Portfolio } from './screens/portfolio/index.tsx'
 import Footer from './components/footer/Footer.tsx'
 
-const App = () => {
-  
+const ScreenWrapper = () => {
   return (
     <>
-        <Nav/>
-        <Home/>
-        <main>
-          <Services/>
-          <Contacts/>
-        </main>
-        <Footer/>
+      <Outlet />
+      <Footer />
     </>
+  )
+}
+
+const App = () => {
+
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="" element={<ScreenWrapper />}>
+          <Route path="" element={<HomeScreen />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
